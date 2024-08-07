@@ -1,0 +1,104 @@
+// Colors
+$primary-color: #ff5733;
+$secondary-color: #333;
+$header-height: 60px;
+$font-family: 'Arial', sans-serif;
+$clr1: #ce2e6c;
+$clr2: #4f3a65;
+$clr3: #574f7d;
+$clr4: #95adbe;
+$clr5: #dff0ea;
+$clr6: #fff;
+$clr7: #222;
+
+$gray1: #ddd;
+$gray2: #aaa;
+$gray3: #777;
+$gray4: #333;
+
+$green1: #1db954;
+$green2: #1db760;
+
+// Breakpoints
+$mobile-breakpoint: 460px;
+$narrow-breakpoint: 720px;
+$normal-breakpoint: 960px;
+
+//Spotify Variables
+$encore-text-size-smaller-2: 0.75rem;
+$encore-text-size-smaller: 0.875rem;
+$encore-text-size-base: 1rem;
+$encore-text-size-larger: 1.5rem;
+$encore-text-size-larger-2: 2rem;
+$encore-text-size-larger-3: 3rem;
+$encore-text-size-larger-4: 4rem;
+$encore-text-size-larger-5: 6rem;
+$encore-border-width-hairline: 1px;
+$encore-border-width-thin: 2px;
+$encore-border-width-thick: 4px;
+$encore-border-width-thicker: 8px;
+$encore-border-width-focus: 3px;
+$encore-graphic-size-decorative-smaller-2: 12px;
+$encore-graphic-size-decorative-smaller: 16px;
+$encore-graphic-size-decorative-base: 24px;
+$encore-graphic-size-decorative-larger: 32px;
+$encore-graphic-size-decorative-larger-2: 40px;
+$encore-graphic-size-decorative-larger-3: 48px;
+$encore-graphic-size-decorative-larger-4: 64px;
+$encore-graphic-size-decorative-larger-5: 88px;
+$encore-graphic-size-informative-smaller-2: 0.75rem;
+$encore-graphic-size-informative-smaller: 1rem;
+$encore-graphic-size-informative-base: 1.5rem;
+$encore-graphic-size-informative-larger: 2rem;
+$encore-graphic-size-informative-larger-2: 2.5rem;
+$encore-graphic-size-informative-larger-3: 3rem;
+$encore-graphic-size-informative-larger-4: 4rem;
+$encore-graphic-size-informative-larger-5: 5.5rem;
+$encore-spacing-tighter-5: 2px;
+$encore-spacing-tighter-4: 4px;
+$encore-spacing-tighter-3: 6px;
+$encore-spacing-tighter-2: 8px;
+$encore-spacing-tighter: 12px;
+$encore-spacing-base: 16px;
+$encore-spacing-looser: 24px;
+$encore-spacing-looser-2: 32px;
+$encore-spacing-looser-3: 48px;
+$encore-spacing-looser-4: 64px;
+$encore-spacing-looser-5: 96px;
+$encore-spacing-looser-6: 128px;
+$encore-control-size-smaller: 32px;
+$encore-control-size-base: 48px;
+$encore-control-size-larger: 56px;
+$encore-layout-margin-tighter: 24px;
+$encore-layout-margin-base: 32px;
+$encore-layout-margin-looser: 64px;
+$encore-corner-radius-smaller: 2px;
+$encore-corner-radius-base: 4px;
+$encore-corner-radius-larger: 6px;
+
+//Spotify Variable Colors
+$background-base: #121212;
+$background-highlight: #1a1a1a;
+$background-press: #000000;
+$background-elevated-base: #242424;
+$background-elevated-highlight: #2a2a2a;
+$background-elevated-press: #000000;
+$background-tinted-base: rgba(255, 255, 255, 0.07);
+$background-tinted-highlight: rgba(255, 255, 255, 0.1);
+$background-tinted-press: rgba(255, 255, 255, 0.04);
+$text-base: #ffffff;
+$text-subdued: #a7a7a7;
+$text-bright-accent: #1ed760;
+$text-negative: #f15e6c;
+$text-warning: #ffa42b;
+$text-positive: #1ed760;
+$text-announcement: #3d91f4;
+$essential-base: #ffffff;
+$essential-subdued: #727272;
+$essential-bright-accent: #1ed760;
+$essential-negative: #e91429;
+$essential-warning: #ffa42b;
+$essential-positive: #1ed760;
+$essential-announcement: #0d72ea;
+$decorative-base: #ffffff;
+$decorative-subdued: #292929;

@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: circular-black, sans-serif;
+  line-height: 1.6;
+  color: #b3b3b3;
+  
+}
+html::-webkit-scrollbar {
+  width: 0;
+  /* width of the scrollbar */
+ 
+  
+  /* height of the scrollbar */
+}
+html:hover {
+  overflow-y: hidden; /* Show the vertical scrollbar on hover */
+}
+
+body {
+  margin: 0 auto;
+  font-size: rem(18px);
+  font-family: circular-black, sans-serif;
+  background-color: black;
+  
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+input {
+  max-width: 100%;
+}
