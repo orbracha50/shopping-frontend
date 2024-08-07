@@ -92,30 +92,4 @@ export function formatPlaylistDuration(totalMilliseconds) {
         return `${minutes} min ${seconds} sec`;
     }
 }
-export async function getLyrics(song) {
-    try {
-        const songName = song.title
-        const songArtist = song.artists[0].name
-        const apiKey = '23d3edbb3a69083e3091c32a9bab7295'
 
-        // CORS proxy URL
-        const proxyUrl = 'https://api.allorigins.win/raw?url=';
-        const apiUrl = `https://api.musixmatch.com/ws/1.1/track.search?q_track=${encodeURIComponent(songName)}&q_artist=${encodeURIComponent(songArtist)}&page_size=1&apikey=${apiKey}`;
-
-        // Make the request through the proxy
-        const response = await axios.get(proxyUrl + encodeURIComponent(apiUrl));
-
-
-        const track = response.data.message.body.track_list[0]?.track;
-        if (!track) {
-            throw new Error('No results found');
-        }
-        console.log('track id:', track.track_id)
-        const lyricsResponse = await axios.get(proxyUrl + encodeURIComponent(`https://api.musixmatch.com/ws/1.1/track.lyrics.get?apikey=${apiKey}&track_id=${track.track_id}`));
-        const lyrics = lyricsResponse.data.message.body.lyrics.lyrics_body;
-        console.log(lyricsResponse)
-        return lyrics
-    } catch (err) {
-        console.log(err)
-    }
-};
