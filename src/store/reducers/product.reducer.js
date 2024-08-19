@@ -7,27 +7,19 @@ export const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
 export const ADD_PRODUCT = 'ADD_PRODUCT'
 export const UPDATE_PRODUCT = 'UPDATE_PRODUCT'
 const initialState = {
-    products: null,
+    products: [],
     product: null,
-    currSong: null,
-    currSelectedProduct: null,
-    currSelectedSong: null,
-    likedSongs: JSON.parse(localStorage.getItem('likedsongs')) || null,
-    currProduct: null,
-    albums: null
 }
 
 export function productReducer(state = initialState, action) {
-    var newState = state
-    var products
-    var product
-    console.log('Action:', action)
+    /* var state = state */
+
+
     switch (action.type) {
-        case SET_PRODUCTS:
-            newState = { ...state, products: action.products }
-      
+        case SET_PRODUCTS:     
+            state = { ...state, products: action.products }
         case SET_PRODUCT:
-            newState = { ...state, product: action.product }
+            state = { ...state, product: action.product }
             break
 
         case REMOVE_PRODUCT:
@@ -37,22 +29,22 @@ export function productReducer(state = initialState, action) {
             products = state.products.filter(
                 (product) => product._id !== action.productId
             )
-            newState = { ...state, products, lastRemovedProduct }
+            state = { ...state, products, lastRemovedProduct }
             break
 
         case ADD_PRODUCT:
-            newState = { ...state, products: [...state.products, action.product] }
+            state = { ...state, products: [...state.products, action.product] }
             break
 
         case UPDATE_PRODUCT:
             products = state.products.map(product => (product._id === action.product._id) ? action.product : product)
-            newState = { ...state, products }
+            state = { ...state, products }
             break
 
-       
+
         default:
     }
-    return newState
+    return state
 }
 
 // unitTestReducer()
