@@ -1,0 +1,25 @@
+.prouduct-item{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 10px;
+    img{
+        height: 27vw;
+        width: 27vw;
+        border-radius: 10px;
+    }
+    h1{
+        color: black;
+        align-self: flex-start;
+    }
+    p{
+        align-self: flex-start;
+    }
+}

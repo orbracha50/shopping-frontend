@@ -4,16 +4,8 @@ import {
     REMOVE_PRODUCT,
     SET_PRODUCTS,
     SET_PRODUCT,
-    UPDATE_SONG,
-    REMOVE_SONG,
-    UPDATE_LIKED_SONGS,
-    UPDATE_PRODUCTS,
-    SET_CURR_SELECTED_PRODUCT,
-    SET_CURR_SELECTED_SONG,
-    UPDATE_SONG_IDX,
-    SET_CURR_PRODUCT,
-    UPDATE_PRODUCT,
-    SET_ALBUMS
+  UPDATE_PRODUCT,
+
 } from '../reducers/product.reducer'
 import { productService } from '../../services/product'
 
@@ -26,15 +18,7 @@ export async function loadProducts() {
         throw err
     }
 }
-export async function loadAlbums() {
-    try {
-        const Albums = await productService.queryAlbums()
-        store.dispatch(getCmdSetAlbums(Albums))
-    } catch (err) {
-        console.log('Cannot load Products', err)
-        throw err
-    }
-}
+
 
 export async function loadProduct(productId) {
     try {
@@ -92,34 +76,9 @@ export async function updateProduct(product) {
     }
 }
 
-export async function updateSong(song) {
-    try {
-        store.dispatch(getCmdUpdateSongProduct(song))
-        return song
-    } catch (err) {
-        console.log('Cannot save Product', err)
-        throw err
-    }
-}
 
 
-export async function setCurrSelectedSong(song) {
-    try {
-        store.dispatch(getCmdsetCurrSelectedSong(song))
-    } catch (err) {
-        console.log('Cannot load Song', err)
-        throw err
-    }
-}
 
-export async function setCurrSelectedProduct(product) {
-    try {
-        store.dispatch(getCmdSetSelectedProduct(product))
-    } catch (err) {
-        console.log('Cannot load Product', err)
-        throw err
-    }
-}
 
 export async function setCurrProduct(product) {
     try {
@@ -130,65 +89,7 @@ export async function setCurrProduct(product) {
     }
 }
 
-export async function removeSong(songId, product) {
-    try {
-        var updateSongs = product.songs.filter(song => song._id !== songId)
-        product.songs = updateSongs
-        await productService.save(product)
-        store.dispatch(getCmdRemoveSong(songId, product))
-        return product
-    } catch (err) {
-        console.log('Cannot remove Song', err)
-        throw err
-    }
-}
 
-export async function updateSongIdx(songs, product) {
-    try {
-        console.log('Songs', songs)
-        console.log('product:',product.songs);
-        product.songs = songs
-        await productService.save(product)
-        store.dispatch(getCmdUpdateSongIdx(songs))
-    }catch (err) {
-        throw err
-    }
-}
-
-
-export async function addToLikedSongs(likedsong) {
-    let songs = []
-    try {
-        let prevLikedsongs = JSON.parse(localStorage.getItem('likedsongs')) || ''
-        console.log(prevLikedsongs[0])
-        if (prevLikedsongs) {
-            console.log(prevLikedsongs.songs)
-            songs = [prevLikedsongs[0].songs, likedsong]
-        } else {
-            songs.push(likedsong)
-        }
-        console.log(songs)
-        const likedSongsProduct = {
-            _id: 'dseq31kigrq9419wqdt',
-            name: 'Liked Songs',
-            createdBy: {
-                _id: 'u666',
-                fullname: 'Liked Songs',
-                imgUrl:
-                    'https://res.cloudinary.com/dvubhdy64/image/upload/v1721520195/spotify/kkjpfxtcj9xetuqaeg0q.png',
-            },
-            songs: songs,
-        }
-        console.log(likedSongsProduct)
-        localStorage.removeItem('likedsongs')
-        productService.addToLikedSongs(likedSongsProduct)
-
-        store.dispatch(getCmdSetLikedSongs(likedSongsProduct))
-    } catch (err) {
-        console.log('Cannot add to Liked Songs', err)
-        throw err
-    }
-}
 // Command Creators:
 function getCmdSetProducts(products) {
     return {
