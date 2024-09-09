@@ -4,8 +4,8 @@
     color: #fff;
     height: $header-height;
     font-family: $font-family;
-    position: relative;
-  width: 100vw;
+  width: max-content;
+  width: 75%;
   justify-content: space-between;
     .logo {
       font-size: 1.5em;

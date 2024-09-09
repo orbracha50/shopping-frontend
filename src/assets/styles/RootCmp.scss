@@ -1,4 +1,5 @@
 .main-container main {
     min-height: calc(100vh - 7rem);
+    width: 100vw;
     overflow: hidden; // Quick fix for JSONs in <pre>
 }

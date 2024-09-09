@@ -1,0 +1,78 @@
+$primary-color: #007bff;
+$error-color: #e74c3c;
+$text-color: #333;
+$border-color: #ccc;
+$border-radius: 5px;
+
+.login-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 1em;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background-color: #fff;
+  position: absolute;
+  top: 20%;
+  left: 8%;
+width: 60vw;
+  h2 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 1em;
+    
+    label {
+      margin-bottom: 0.5em;
+      color: $text-color;
+      display: block;
+    }
+    
+    input {
+      border: 1px solid $border-color;
+      padding: 0.5em;
+      font-size: 1em;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: $border-radius;
+      
+      &.error {
+        border-color: $error-color;
+      }
+    }
+    
+    .error-message {
+      color: $error-color;
+      font-size: 0.9em;
+    }
+  }
+  
+  button {
+    padding: 0.7em;
+    color: #fff;
+    background-color: $primary-color;
+    border: none;
+    border-radius: $border-radius;
+    font-size: 1em;
+    width: 100%;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+    .toggle-button {
+      background-color: transparent;
+      color: $primary-color;
+      border: none;
+      font-size: 5px;
+      cursor: pointer;
+      margin-top: 1em;
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+      &:hover {
+        text-decoration: underline;
+      }
+  }
+}
